@@ -25,13 +25,17 @@ class Search extends Component {
         //this.searchedData = this.searchedData.concat(this.searchString);
     }
 
+    onDeleteSearchHandler = (event) => {
+        document.getElementById("input").value = '';
+    }
+
     render() {
         return (
             <div className="SearchBar">
 
                 <img src="https://img.icons8.com/android/24/000000/search.png" onClick={this.onSearchHandler} />
-                <input className="SearchBar-Input" placeholder="Search by Title" type='text' onChange={this.OnSearchChangeHandler} />
-                
+                <input className="SearchBar-Input" type='text' placeholder="Search by Title" id="input" onChange={this.OnSearchChangeHandler} />
+                <img src="https://img.icons8.com/material/24/000000/circled-x.png" onClick={ this.onDeleteSearchHandler}/>
             </div>
 
         );
