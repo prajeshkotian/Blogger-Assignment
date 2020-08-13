@@ -2,29 +2,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './SearchBar.css';
-import { Route } from 'react-router-dom';
-import SearchedData from '../SearchedData/SearchedData';
 
+//Search component displays Search Bar and redirects urlon clicking search button
 class Search extends Component {
    
     searchString = '';
 
-
+    //Storing searched value
     OnSearchChangeHandler = (event) => {
         this.searchString = event.target.value;
        
     }
 
+    //method to check if string is entered and if valid redirect to url
     onSearchHandler = (event) => {
-        //console.log(this.searchString);
         if (!this.searchString)
             alert('Enter a value to search');
         else {
             this.props.history.push('/Search-Data/' + this.searchString);
         }
-        //this.searchedData = this.searchedData.concat(this.searchString);
+        
     }
 
+    //method to delete clear existing values in searchbox
     onDeleteSearchHandler = (event) => {
         document.getElementById("input").value = '';
     }

@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import Post from '../../Components/Post/Post';
 import './Posts.css';
 
+
+//Simple Component to display each Blog Post
 class Posts extends Component {
 
-    componentDidMount() {
-        //var posts = JSON.parse(localStorage.getItem('Data'));
-    }
+   
 
     render() {
-        
+        //check if any posts are available
         const posts = this.props.posts.length>0 ? this.props.posts.map(ele => {
             return (
                 <Post title={ele.Title} body={ele.Body} key={ele.Title} />
@@ -19,7 +19,7 @@ class Posts extends Component {
         }) : <h3>No Posts Found!!!</h3>;
         
         return (
-            //<p>All Posts!!!</p>
+            
                 <div className="Posts">
                     {posts}
                 </div>

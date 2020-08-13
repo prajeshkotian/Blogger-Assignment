@@ -12,7 +12,7 @@ function App() {
   return (
       <div className="App">
           
-          
+          //Routes to the appropriate component based on path
           
           <Route path='/' component={Search} />
           <Route path='/' component={Navigation} />

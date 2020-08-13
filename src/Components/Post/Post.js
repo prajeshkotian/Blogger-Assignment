@@ -7,7 +7,7 @@ function Post({ title,body}) {
     return (
         <article className="Post">
             <h3>{title}</h3>
-            {/*<div>{props.body}</div>*/}
+            
             <ReactMarkdown source={body } />
         </article>
         );

@@ -11,12 +11,13 @@ class NewPost extends Component {
     }
 
   
-
+    //simple form which take 2 inputs a title and body and one submit button to publish the post.
     render() {
        
         //console.log(this.props.title);
         return (
             <div>
+                
                 <form className="NewPost" onSubmit={this.props.onSubmitChangeHandler}>
                     <label>New Post</label>
                     <input type='text' placeholder='Title' value={this.props.title } onChange={this.props.onTitleChangeHandler } required />
@@ -28,6 +29,7 @@ class NewPost extends Component {
     }
 }
 
+//mapping store state to local props
 const mapStateToProps = state => {
     return {
 
@@ -37,6 +39,8 @@ const mapStateToProps = state => {
     };
 };
 
+
+//mapping methods to dispatcher
 const mapDispatchToProps = (dispatch) => {
     return {
         onTitleChangeHandler: (event) => { dispatch({ type: 'CHANGE-TITLE', value: event.target.value }) },
@@ -45,4 +49,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
+
+//connecting the Component to Store
 export default connect(mapStateToProps, mapDispatchToProps)(NewPost);
